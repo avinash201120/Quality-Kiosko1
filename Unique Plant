@@ -1,0 +1,46 @@
+import java.util.*;
+import java.io.*;
+import java.lang.Math;
+
+public class Main
+{
+  public static int uniquePlants(int N,int[] H)
+  {
+
+    //this is defHult OUTPUT. You can change it.
+    int result = 0;
+    for(int i=1;i<N-1;i++)
+    {
+      if(H[i-1]>H[i] && H[i]<H[i+1])
+      result +=1;
+    }
+    if(H[N-2]>H[N-1])
+    result +=1;
+    if(H[0]<H[1])
+    result +=1;
+    return result;
+
+    //write your Logic here:
+
+
+      // return result;
+  }
+  public static void main (String[]args)
+  {
+    Scanner sc = new Scanner (System.in);
+
+    //INPUT [uncomment & modify if required]
+    int N = sc.nextInt ();
+
+    int[] H = new int[N];
+    for (int i = 0; i < N; i++)
+    {
+        H[i] = sc.nextInt ();
+    }
+    
+    sc.close ();
+
+    //OUTPUT [uncomment & modify if required]
+    System.out.print(uniquePlants(N,H));
+  }
+}
